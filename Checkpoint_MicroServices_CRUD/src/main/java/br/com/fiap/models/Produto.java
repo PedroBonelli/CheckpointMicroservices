@@ -9,7 +9,10 @@ public class Produto {
 	private int quantidadeEstoque;
 	private double volumeML;
 	private String paisOrigem;
-	private String pathImagem;
+	
+	public Produto() {
+		
+	}
 	
 	
 	public Produto(long id, String nome, String desc, double preco, String sku, int quantidadeEstoque, double volume,
@@ -93,17 +96,6 @@ public class Produto {
 	public void setPaisOrigem(String paisOrigem) {
 		this.paisOrigem = paisOrigem;
 	}
-
-
-	public String getPathImagem() {
-		return pathImagem;
-	}
-
-
-	public void setPathImagem(String pathImagem) {
-		this.pathImagem = pathImagem;
-	}
-
 
 	public long getId() {
 		return id;

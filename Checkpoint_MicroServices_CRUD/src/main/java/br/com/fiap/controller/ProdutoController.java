@@ -28,6 +28,7 @@ public class ProdutoController {
 		return "produto-detalhe";
 	}
 	
+	
 	@RequestMapping(value = "/produtos/new", method = RequestMethod.GET)
 	public String openSave(){
 		return "produto-novo";
@@ -47,12 +48,21 @@ public class ProdutoController {
 		return "produto-editar";
 	}
 	
+	
 	@RequestMapping(value = "/produtos/update", method = RequestMethod.POST)
 	public String update(Model model, Produto produto) {
 		
 		repository.update(produto);
 		model.addAttribute("produtos", repository.findAll());
 		return "index";
+	}
+	
+	@RequestMapping(value = "/produtos/delete/{id}", method = RequestMethod.DELETE)
+	public String delete(@PathVariable("id") long id, Model model) {
+		
+		repository.deleteById(id);
+		model.addAttribute("produtos", repository.findAll());
+		return "redirect:/produtos";
 	}
 	
 	

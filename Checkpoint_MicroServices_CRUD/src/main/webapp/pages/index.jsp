@@ -19,50 +19,68 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-	
-	
-	 <spring:url value="/resources/css" var="css"/>
-	 <spring:url value="/resources/images" var="imgs"/>
 
-	 
-	<link href="${css}/style.css" rel="stylesheet">
+
+<c:set value="${pageContext.request.contextPath}" var="contextPath" />
+
+
+
 
 </head>
 
 <body>
 
 	<div class="container-fluid px-0 mx-0">
-		<div class="header-dark py-4 ps-4 shadow bg-body">
-			<h1 class="lexend-deca-textos-principais">Nossa Empresa Projeto
+		<div class="py-4 ps-4 bg-primary text-light">
+			<h1 class="display-5">Miliuma Bebidas
 			</h1>
 		</div>
 	</div>
 
+
+	<div class="ms-4 mt-5">
+		<h2>Cadastrar novo produto</h2>
+
+		<a href="${contextPath}/produtos/new" class="btn btn-outline-dark my-3">Cadastrar
+			novo produto</a>
+	</div>
+
+
 	<div class="container-fluid">
 
+
+
 		<div
-			class="row my-5 p-3 d-flex justify-content-between align-items-center">
-			
-			<a href="./new" class="btn btn-outline-dark mt-3">Cadastrar novo produto</a>
+			class="row mt-5 mb-3 p-3 d-flex justify-content-between align-items-center">
+
+			<h2>Produtos</h2>
 
 			<c:forEach items="${produtos}" var="produto">
-				<div class="col-12 col-sm-12 col-md-4 col-lg-4 my-5">
-				<div class="card shadow bg-body">
-					<img src="${imgs}/${produto.pathImagem}" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">${produto.nome}</h5>
-						<p class="card-text">${produto.desc}</p>
-						<a href="./${produto.id}" class="btn btn-outline-dark">Mais detalhes</a> 
-						<a href="./update/${produto.id}" class="btn btn-outline-info">Editar</a> 
-						<a href="#" class="btn btn-outline-danger">Excluir</a>
-						
+				<div class="col-12 col-sm-12 col-md-4 col-lg-4 my-3">
+					<div class="card shadow bg-body">
+						<div class="card-body">
+							<h5 class="card-title">${produto.nome}</h5>
+							<p class="card-text py-1 lead">R$ ${produto.preco}</p>
+							<p class="card-text">${produto.desc}</p>
+
+							<form:form action="${contextPath}/produtos/delete/${produto.id}"
+								method="delete">
+
+								<a href="${contextPath}/produtos/${produto.id}"
+									class="btn btn-outline-dark">Mais detalhes</a>
+								<a href="${contextPath}/produtos/update/${produto.id}"
+									class="btn btn-outline-primary">Editar</a>
+								<input type="submit" class="btn btn-outline-danger"
+									value="Excluir">
+
+							</form:form>
+						</div>
 					</div>
 				</div>
-			</div>
 			</c:forEach>
 
 
-			
+
 
 
 

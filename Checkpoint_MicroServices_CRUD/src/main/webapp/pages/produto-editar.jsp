@@ -20,7 +20,7 @@
 <body>
 	<div class="container-fluid px-0 mx-0">
 		<div class="header-dark py-4 ps-4 shadow bg-body">
-			<h1 class="lexend-deca-textos-principais">Nossa Empresa Projeto
+			<h1 class="display-5">Miliuma Bebidas
 			</h1>
 		</div>
 	</div>
@@ -30,7 +30,7 @@
 
 		<h1>Editar produto</h1>
 		
-		<form action="./update" method="post">
+		<form action="../update" method="post">
 					
 						<div class="form-group">
 							<input type="hidden" name="id" id="id" value="${produto.id}" />
@@ -38,28 +38,33 @@
                         </div>
 						
 						<div class="form-group">
-							<label class="control-label" for="nome">Nome:</label>
+							<label class="control-label" for="nome">Nome</label>
 							<input type="text" name="nome" id="nome" value="${produto.nome}" class="form-control" maxlength="50" size="50" />
                         </div>
                         
                         <div class="form-group">
-							<label class="control-label" for="nome">SKU:</label>
+							<label class="control-label" for="nome">SKU</label>
 							<input type="text" name="sku" id="sku" value="${produto.sku}" class="form-control" maxlength="50" size="50" />
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label" for="mesnagem">Descrição:</label>
-							<textarea id="descricao" class="form-control" name="descricao" rows="4" cols="100">${produto.desc}</textarea>
+							<label class="control-label" for="desc">Descrição</label>
+							<textarea id="desc" class="form-control" name="desc" rows="4" cols="100">${produto.desc}</textarea>
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label" for="preco">Preço:</label>
+							<label class="control-label" for="preco">Preço</label>
 							<input type="text" name="preco" id="preco" value="${produto.preco}" class="form-control" maxlength="14" size="15" />
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label" for="mesnagem">Quantidade em estoque:</label>
+							<label class="control-label" for="mesnagem">Quantidade em estoque</label>
 							<input type="number" id="quantidadeEstoque" class="form-control" name="quantidadeEstoque" value="${produto.quantidadeEstoque}">
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="paisOrigem">País de origem</label>
+							<input type="text" id="paisOrigem" class="form-control" name="paisOrigem" value="${produto.paisOrigem}">
 						</div>
 						
 						<hr>
@@ -71,7 +76,7 @@
                         <br>
 					</form>
 
-		<a href="./" class="btn btn-outline-dark mt-3">Cancelar</a>
+		<a href="../" class="btn btn-outline-dark mt-3">Cancelar</a>
 	</div>
 	
 </body>

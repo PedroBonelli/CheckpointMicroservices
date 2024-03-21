@@ -22,28 +22,28 @@
 <body>
    <div class="container-fluid px-0 mx-0">
 		<div class="header-dark py-4 ps-4 shadow bg-body">
-			<h1 class="lexend-deca-textos-principais">Nossa Empresa Projeto
+			<h1 class="display-5">Miliuma Bebidas
 			</h1>
 		</div>
 	</div>
 	
 	<div class="container-fluid mt-5 d-flex flex-column justify-content-center align-items-center">
-        <div class="card shadow-lg bg-body" style="width: 40rem;">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card shadow-lg bg-body p-3" style="width: 40rem;">
+          
             <div class="card-body">
                 <h5 class="card-title">${produto.nome}</h5>
-                <p class="card-text">${produto.desc}</p>
+                <p class="card-text lead py-2">${produto.desc}</p>
             </div>
+            
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">SKU: ${produto.sku}</li>
-                <li class="list-group-item">Preço: ${produto.preco}</li>
+                <li class="list-group-item">Preço: R$ ${produto.preco}</li>
                 <li class="list-group-item">País de Origem: ${produto.paisOrigem}</li>
                 <li class="list-group-item">Estoque: ${produto.quantidadeEstoque} unidades</li>
+                
+                
             </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
+
         </div>
         <a href="./" class="btn btn-outline-dark mt-5">Voltar à pagina de produtos</a>
     </div>

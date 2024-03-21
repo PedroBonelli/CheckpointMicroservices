@@ -21,7 +21,7 @@
 
 	<div class="container-fluid px-0 mx-0">
 		<div class="header-dark py-4 ps-4 shadow bg-body">
-			<h1 class="lexend-deca-textos-principais">Nossa Empresa Projeto
+			<h1 class="display-5">Miliuma Bebidas
 			</h1>
 		</div>
 	</div>
@@ -74,10 +74,9 @@
 				<input type="text" id="paisOrigem" name="paisOrigem"
 					class="form-control" /> <font color="red"></font><br />
 			</div>
-			<hr>
+			
 
-			<a class="btn btn-default" href="./">Cancelar</a>
-			<button type="submit" class="btn btn-primary">Gravar</button>
+			<button type="submit" class="btn btn-success">Gravar</button>
 
 			<br> <br>
 		</form>
